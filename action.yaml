@@ -21,6 +21,10 @@ inputs:
     description: "A comma-separated list of rules for namcap to run."
     required: false
     default: ""
+  ccacheEnable:
+    description: "Use ccache option to build package"
+    required: false
+    default: ""
   namcapExcludeRules:
     description: "A comma-separated list of rules for namcap not to run."
     required: false

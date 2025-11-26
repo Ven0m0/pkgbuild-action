@@ -14,6 +14,7 @@ Inputs:
             (repo root by default).
 * `aurDeps`: Support AUR dependencies if nonempty.
 * `namcapDisable`: Disable namcap checks if nonempty.
+* `ccacheEnable`: Enable ccache option usage if nonempty.
 * `namcapRules`: A comma-separated list of rules for namcap to run.
 * `namcapExcludeRules`: A comma-separated list of rules for namcap not to run.
 * `makepkgArgs`: Additional arguments to pass to `makepkg`.

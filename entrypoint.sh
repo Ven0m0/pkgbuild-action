@@ -28,6 +28,14 @@ pacman -Syu --noconfirm --needed base-devel
 # `builder` needs to have a home directory because some PKGBUILDs will try to
 # write to it (e.g. for cache)
 useradd builder -m
+
+# Set ccache option for makepkg
+if [ -n "${INPUT_CCACHEENABLE:-}" ]; then
+    pacman -S --noconfirm ccache
+    sed -i 's|!ccache|ccache|' /etc/makepkg.conf
+    sudo -u builder mkdir -p /home/builder/.ccache
+fi
+
 # When installing dependencies, makepkg will use sudo
 # Give user `builder` passwordless sudo access
 echo "builder ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
